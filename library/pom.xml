@@ -43,9 +43,27 @@
 				<extensions>true</extensions>
 				<configuration>
 					<nativeLibrariesDirectory>ignored</nativeLibrariesDirectory>
-				</configuration>
+					<proguard>
+			                        <skip>false</skip>
+	        	                </proguard>
+                    			<apkDebug>
+                        			false
+	                    		</apkDebug>
+        		         </configuration>
+		                <!-- This is for maven update properties in AndroidManifest file. Working outside eclipse. -->
+                		<executions>
+		                    <execution>
+                		        <id>update-manifest</id>
+		                        <phase>process-resources</phase>
+                		        <goals>
+                            			<goal>manifest-update</goal>
+		                        </goals>
+                		        <configuration>
+                	            		<proguardFile>${project.basedir}/proguard.cfg</proguardFile>
+		                        </configuration>
+		                    </execution>			
+				</executions>	
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
