@@ -147,6 +147,10 @@ public class SherlockFragmentActivity extends Watson implements OnActionModeStar
     public void invalidateOptionsMenu() {
         if (BuildConfig.DEBUG) Log.d(TAG, "[invalidateOptionsMenu]");
 
+        if (DEBUG) Log.d(TAG, "[invalidateOptionsMenu]");
+        if (getSherlock() == null){ 
+            return;
+        }
         getSherlock().dispatchInvalidateOptionsMenu();
     }
 
