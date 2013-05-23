@@ -92,8 +92,6 @@ public class ActionBarSherlockNative extends ActionBarSherlock {
         }
         final boolean result = callbackOptionsItemSelected(wrapped);
         if (BuildConfig.DEBUG) Log.d(TAG, "[dispatchOptionsItemSelected] returning " + result);
-        if(mMenu == null) return false;
-        final boolean result = callbackOptionsItemSelected(mMenu.findItem(item));
         return result;
     }
 
