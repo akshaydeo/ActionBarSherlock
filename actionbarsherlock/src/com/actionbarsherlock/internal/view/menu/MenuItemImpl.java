@@ -486,8 +486,7 @@ public final class MenuItemImpl implements MenuItem {
 
     @Override
     public String toString() {
-        if(mTitle != null) return mTitle.toString();
-        else return "";
+        return mTitle.toString();
     }
 
     void setMenuInfo(ContextMenuInfo menuInfo) {
